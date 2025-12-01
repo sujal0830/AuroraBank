@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuroraBank – Transfer Funds (Step 3)</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Step 3 CSS -->
+    <link rel="stylesheet" href="style/transfer3.css">
+</head>
+
+<body>
+<div class="app-layout d-flex">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar d-flex flex-column">
+        <div class="sidebar-logo d-flex align-items-center gap-2 mb-4">
+            <div class="logo-icon d-flex align-items-center justify-content-center rounded-3">
+                <i class="fas fa-university"></i>
+            </div>
+            <span class="fw-bold fs-5">AuroraBank</span>
+        </div>
+
+        <nav class="sidebar-nav flex-grow-1">
+            <a href="dashboard.html" class="sidebar-link">
+                <span class="me-2"><i class="fas fa-house"></i></span> Dashboard
+            </a>
+            <a href="transfer.html" class="sidebar-link active">
+                <span class="me-2"><i class="fas fa-arrow-right-arrow-left"></i></span> Transfer Funds
+            </a>
+            <a href="transactions.html" class="sidebar-link">
+                <span class="me-2"><i class="fas fa-file-invoice"></i></span> Transactions
+            </a>
+            <a href="investments.html" class="sidebar-link">
+                <span class="me-2"><i class="fas fa-chart-line"></i></span> Investments
+            </a>
+            <a href="chat.html" class="sidebar-link">
+                <span class="me-2"><i class="fas fa-comments"></i></span> AI Chat
+            </a>
+        </nav>
+
+        <!-- Sign Out Bottom -->
+        <div class="sidebar-footer mt-auto">
+            <a href="index.html" class="sidebar-link signout-link">
+                <span class="me-2"><i class="fas fa-arrow-right-from-bracket"></i></span> Sign Out
+            </a>
+        </div>
+    </aside>
+
+
+    <!-- MAIN AREA -->
+    <div class="main flex-grow-1 d-flex flex-column">
+
+        <!-- TOP NAVBAR -->
+        <header class="topbar d-flex align-items-center justify-content-between">
+            <div>
+                <h4 class="mb-1 fw-semibold">Transfer Funds</h4>
+                <p class="mb-0 text-muted small">Review and confirm your transfer</p>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                <button class="icon-btn"><i class="fas fa-bell"></i></button>
+                <button class="icon-btn"><i class="fas fa-gear"></i></button>
+
+                <div class="d-flex align-items-center gap-2 profile">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="profile-avatar" alt="">
+                    <div class="d-none d-sm-block small">
+                        <div class="fw-semibold">Michael Chen</div>
+                        <div class="text-muted">michael.chen@email.com</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <main class="content">
+
+            <!-- STEPPER -->
+            <div class="stepper">
+                <div class="step">
+                    <div class="step-circle completed"><i class="fas fa-check"></i></div>
+                    <div class="step-text">
+                        <span class="step-label">From</span>
+                        <span class="step-desc">Account selected</span>
+                    </div>
+                </div>
+
+                <div class="step-line completed"></div>
+
+                <div class="step">
+                    <div class="step-circle completed"><i class="fas fa-check"></i></div>
+                    <div class="step-text">
+                        <span class="step-label">To</span>
+                        <span class="step-desc">Recipient chosen</span>
+                    </div>
+                </div>
+
+                <div class="step-line"></div>
+
+                <div class="step">
+                    <div class="step-circle active">3</div>
+                    <div class="step-text">
+                        <span class="step-label">Review & Confirm</span>
+                        <span class="step-desc">Verify details</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRID -->
+            <div class="content-grid">
+
+                <!-- LEFT SIDE -->
+                <div>
+                    <div class="section-card">
+                        <h2 class="section-title">Review Transfer</h2>
+
+                        <div class="review-row">
+                            <p class="review-label">From Account</p>
+                            <p class="review-value">Chequing Account •••• 3421</p>
+                        </div>
+
+                        <div class="review-row">
+                            <p class="review-label">Recipient</p>
+                            <p class="review-value">Michael Johnson •••• 4521</p>
+                        </div>
+
+                        <div class="review-row">
+                            <p class="review-label">Amount</p>
+                            <p class="review-value amount">$1,500.00</p>
+                        </div>
+
+                        <div class="review-row">
+                            <p class="review-label">Transfer Fee</p>
+                            <p class="review-value green">$0.00</p>
+                        </div>
+
+                        <div class="review-row">
+                            <p class="review-label">Message</p>
+                            <p class="review-value">—</p>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="review-total">
+                            <p>Total</p>
+                            <p class="total-amount">$1,500.00</p>
+                        </div>
+
+                        <div class="confirm-buttons mt-4">
+                            <button class="btn btn-confirm w-100 mb-2">
+                                <i class="fas fa-lock"></i> Confirm Transfer
+                            </button>
+                            <a href="transfer2.html" class="btn btn-cancel w-100">Back</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT SUMMARY -->
+                <div>
+                    <div class="summary-card">
+                        <h3 class="summary-title">Transfer Summary</h3>
+
+                        <div class="summary-section">
+                            <div class="summary-label">From</div>
+                            <div class="account-display">
+                                <div class="account-icon-small"><i class="fas fa-wallet"></i></div>
+                                <div>
+                                    <div class="account-name">Chequing Account</div>
+                                    <div class="account-number">•••• 3421</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="summary-section">
+                            <div class="summary-label">Recipient</div>
+                            <div class="recipient-display">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="recipient-avatar" />
+                                <div>
+                                    <div class="recipient-name">Michael Johnson</div>
+                                    <div class="recipient-account">•••• 4521</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="summary-section">
+                            <div class="amount-row">
+                                <span class="amount-label">Transfer Amount</span>
+                                <span class="amount-value">$1,500.00</span>
+                            </div>
+                            <div class="amount-row">
+                                <span class="amount-label">Transfer Fee</span>
+                                <span class="amount-value free">$0.00</span>
+                            </div>
+                        </div>
+
+                        <div class="total-row">
+                            <span class="total-label">Total</span>
+                            <span class="total-amount">$1,500.00</span>
+                        </div>
+
+                        <div class="arrival-info">
+                            <i class="fas fa-info-circle arrival-icon"></i>
+                            <div class="arrival-text">
+                                <span class="arrival-label">Estimated Arrival</span>
+                                Instant (within seconds)
+                            </div>
+                        </div>
+
+                        <button class="btn btn-confirm w-100">
+                            <i class="fas fa-check"></i> Confirm Transfer
+                        </button>
+                        <a href="transfer2.html" class="btn btn-cancel w-100">Back</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

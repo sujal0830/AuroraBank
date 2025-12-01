@@ -1,0 +1,94 @@
+/* ===================================
+   AuroraBank Global Theme
+=================================== */
+
+:root {
+    --aurora-pink: #d81b60;
+    --aurora-purple: #8e24aa;
+    --text-dark: #1a1a1a;
+    --text-muted: #6b7280;
+    --radius-lg: 1.2rem;
+    --radius-md: 0.7rem;
+    --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Consistent fonts Across All Pages */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--text-dark);
+}
+
+/* Card */
+.signin-card {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+/* Logo Icon */
+.logo-icon-wrapper i {
+    background: linear-gradient(135deg, var(--aurora-pink), var(--aurora-purple));
+    padding: 12px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.brand-title {
+    font-weight: 700;
+}
+
+/* Inputs */
+.form-control {
+    border-radius: var(--radius-md);
+    padding: 0.8rem 1rem;
+    border: 2px solid #e5e7eb;
+    font-size: 0.95rem;
+}
+
+.form-control:focus {
+    border-color: var(--aurora-pink);
+    box-shadow: none;
+}
+
+.eye-addon {
+    background: #fff;
+    border-left: none;
+    cursor: pointer;
+}
+
+.eye-addon i {
+    color: var(--text-muted);
+}
+
+/* Button */
+.btn-aurora {
+    background-color: var(--aurora-pink);
+    color: #fff;
+    border-radius: var(--radius-md);
+}
+
+.btn-aurora:hover {
+    background-color: #b01650;
+}
+
+/* Gradient Side Panel */
+.gradient-panel {
+    background: linear-gradient(135deg, var(--aurora-pink), var(--aurora-purple));
+}
+
+.panel-content {
+    max-width: 420px;
+}
+
+.illustration-img {
+    width: 55%;
+}
+
+/* Feature text */
+.features-list p {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}

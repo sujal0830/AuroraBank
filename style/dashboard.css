@@ -1,0 +1,552 @@
+/* Overall page */
+body {
+    background-color: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Layout */
+.app-layout {
+    min-height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+
+.sidebar {
+    width: 240px;
+    background: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    padding: 20px 18px;
+}
+
+.sidebar-logo .logo-icon {
+    background: linear-gradient(135deg, #b91c7f 0%, #8b1760 100%);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+}
+
+.sidebar-nav {
+    margin-top: 8px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #374151;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-link:hover {
+    background-color: #fef5fb;
+    color: #b91c7f;
+}
+
+.sidebar-link.active {
+    background-color: #fde7f1;
+    color: #b91c7f;
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    margin-top: 16px;
+    padding-top: 8px;
+    border-top: 1px solid #edf2f7;
+}
+
+.signout-link {
+    color: #e11d48;
+    font-weight: 500;
+}
+
+/* ===== TOPBAR ===== */
+
+.main {
+    background-color: #f8f9fa;
+}
+
+.topbar {
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 14px 24px;
+}
+
+.icon-btn {
+    background: #f3f4f6;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #4b5563;
+}
+
+.icon-btn:hover {
+    background: #e5e7eb;
+}
+
+.profile-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    object-fit: cover;
+}
+
+/* ===== MAIN CONTENT ===== */
+
+.content {
+    padding: 20px 24px 32px;
+}
+
+.main-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.page-title {
+    color: #6c757d;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== ACCOUNT CARDS ===== */
+
+.account-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 1.5rem;
+    height: 95%;
+}
+
+.account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.account-type {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.account-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.account-icon.checking {
+    background: linear-gradient(135deg, #b91c7f 0%, #8b1760 100%);
+}
+.account-icon.savings {
+    background: linear-gradient(135deg, #00b8a9 0%, #008e82 100%);
+}
+.account-icon.credit {
+    background: linear-gradient(135deg, #9b59b6 0%, #7d3c98 100%);
+}
+.account-icon.crypto {
+    background: linear-gradient(135deg, #f39c12 0%, #d68910 100%);
+}
+
+.account-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #2c3e50;
+}
+.account-number {
+    font-size: 0.8rem;
+    color: #95a5a6;
+}
+
+.balance-amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0.5rem 0;
+}
+.balance-label {
+    font-size: 0.85rem;
+    color: #00b8a9;
+    font-weight: 500;
+}
+.balance-label.savings {
+    color: #2c3e50;
+}
+.balance-label.credit {
+    color: #7f8c8d;
+}
+
+/* Transactions list */
+.transactions {
+    margin-top: 1.5rem;
+}
+.transaction-title {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+}
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #ecf0f1;
+}
+.transaction-item:last-child {
+    border-bottom: none;
+}
+.transaction-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+.transaction-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #ecf0f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+.transaction-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+.transaction-date {
+    font-size: 0.8rem;
+    color: #95a5a6;
+}
+.transaction-amount {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+.transaction-amount.negative {
+    color: #2c3e50;
+}
+.transaction-amount.positive {
+    color: #27ae60;
+}
+
+/* Savings interest info */
+.interest-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ecf0f1;
+}
+.interest-item {
+    font-size: 0.85rem;
+}
+.interest-label {
+    color: #7f8c8d;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+.interest-value {
+    font-weight: 600;
+    color: #00b8a9;
+}
+.growth-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: #e8f8f5;
+    color: #00b8a9;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+/* Credit info */
+.credit-info {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ecf0f1;
+}
+.credit-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+.credit-label {
+    color: #7f8c8d;
+}
+.credit-value {
+    font-weight: 600;
+    color: #2c3e50;
+}
+.credit-available {
+    margin-top: 1rem;
+}
+.progress {
+    height: 10px;
+    margin-top: 0.5rem;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+}
+.progress-bar {
+    background: linear-gradient(90deg, #9b59b6 0%, #b980d8 100%);
+}
+
+/* Payment due */
+.payment-due {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: #fff5f5;
+    border-radius: 8px;
+}
+.payment-due-icon {
+    color: #e74c3c;
+    font-size: 1rem;
+}
+.payment-due-text {
+    flex: 1;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+.payment-due-date {
+    font-weight: 600;
+    color: #e74c3c;
+    font-size: 0.9rem;
+}
+
+/* Crypto chart */
+.chart-placeholder {
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to top, rgba(0, 184, 169, 0.3) 0%, rgba(0, 184, 169, 0.05) 100%);
+    border-radius: 8px;
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Right sidebar panels */
+.sidebar-panel {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 1.5rem;
+}
+.sidebar-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.section-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Upcoming payments */
+.payment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+}
+.payment-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+.payment-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    background: white;
+}
+.payment-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+.payment-due-in {
+    font-size: 0.8rem;
+    color: #95a5a6;
+}
+.payment-amount {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+/* Notifications */
+.notification-item {
+    padding: 1.23rem;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+}
+.notification-item.success { background: #e8f8f5; }
+.notification-item.warning { background: #fef9e7; }
+.notification-item.info    { background: #ebf5fb; }
+
+.notification-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+.notification-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+.notification-icon.success { background: #00b8a9; color: white; }
+.notification-icon.warning { background: #f39c12; color: white; }
+.notification-icon.info    { background: #3498db; color: white; }
+
+.notification-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+.notification-text {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    line-height: 1.4;
+    margin-left: 2.5rem;
+}
+.notification-time {
+    font-size: 0.75rem;
+    color: #95a5a6;
+    margin-left: 2.5rem;
+    margin-top: 0.3rem;
+}
+
+/* Quick actions */
+.quick-actions {
+    background: white;
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.quick-actions-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.action-card {
+    text-align: center;
+    padding: 1rem 1rem;
+    border: 2px solid #ecf0f1;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.action-card:hover {
+    border-color: #b91c7f;
+    background: #fef5fb;
+    transform: translateY(-2px);
+}
+.action-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+.action-icon.send    { background: #ffe8f5; color: #b91c7f; }
+.action-icon.pay     { background: #e8f8f5; color: #00b8a9; }
+.action-icon.view    { background: #f3e8ff; color: #9b59b6; }
+.action-icon.support { background: #fff4e6; color: #f39c12; }
+
+.action-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+}
+.action-subtitle {
+    font-size: 0.8rem;
+    color: #95a5a6;
+}
+
+/* ===== CRYPTO CARD DAY LABELS ===== */
+
+.crypto-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.crypto-balance-section {
+    margin: 1rem 0 0.5rem 0;
+}
+
+.crypto-chart-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    min-height: 160px;
+}
+
+
+.chart-days {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0.2rem 0;
+    font-size: 0.7rem;
+    color: #95a5a6;
+}
+

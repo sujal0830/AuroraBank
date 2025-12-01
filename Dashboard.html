@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuroraBank – Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="style/dashboard.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-layout d-flex">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar d-flex flex-column">
+        <div class="sidebar-logo d-flex align-items-center gap-2 mb-4">
+            <div class="logo-icon d-flex align-items-center justify-content-center rounded-3">
+                <i class="fas fa-university"></i>
+            </div>
+            <span class="fw-bold fs-5">AuroraBank</span>
+        </div>
+
+        <nav class="sidebar-nav flex-grow-1">
+            <a href="dashboard.html" class="sidebar-link active">
+                <span class="me-2"><i class="fas fa-house"></i></span> Dashboard
+            </a>
+            <a href="transfer.html" class="sidebar-link">
+                <span class="me-2"><i class="fas fa-arrow-right-arrow-left"></i></span> Transfer Funds
+            </a>
+            <a href="transactions.html" class="sidebar-link">
+                <span class="me-2"><i class="fas fa-file-invoice"></i></span> Transactions
+            </a>
+            <a href="investments.html" class="sidebar-link">
+                <span class="me-2"><i class="fas fa-chart-line"></i></span> Investments
+            </a>
+            <a href="chat.html" class="sidebar-link">
+                <span class="me-2"><i class="fas fa-comments"></i></span> AI Chat
+            </a>
+        </nav>
+
+        <div class="sidebar-footer mt-auto">
+            <a href="index.html" class="sidebar-link signout-link">
+                <span class="me-2"><i class="fas fa-arrow-right-from-bracket"></i></span> Sign Out
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main flex-grow-1 d-flex flex-column">
+
+        <!-- TOP BAR -->
+        <header class="topbar d-flex align-items-center justify-content-between">
+            <div>
+                <h4 class="mb-1 fw-semibold">Dashboard</h4>
+                <p class="mb-0 text-muted small">Your financial overview</p>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                <button class="icon-btn"><i class="fas fa-bell"></i></button>
+                <button class="icon-btn"><i class="fas fa-gear"></i></button>
+
+                <div class="d-flex align-items-center gap-2 profile">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="profile-avatar" alt="">
+                    <div class="d-none d-sm-block small">
+                        <div class="fw-semibold">Michael Chen</div>
+                        <div class="text-muted">michael.chen@email.com</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <main class="content">
+            <div class="main-content">
+                <div class="page-title">Here's your financial overview</div>
+
+                <div class="row">
+
+                    <!-- Left -->
+                    <div class="col-lg-8">
+                        <div class="row">
+
+                            <!-- Chequing Account -->
+                            <div class="col-md-6">
+                                <div class="account-card">
+                                    <div class="account-header">
+                                        <div class="account-type">
+                                            <div class="account-icon checking"><i class="fas fa-wallet"></i></div>
+                                            <div>
+                                                <div class="account-name">Chequing Account</div>
+                                                <div class="account-number">****3421</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="balance-amount">$4,287.52</div>
+                                    <div class="balance-label">Available Balance</div>
+
+                                    <div class="transactions">
+                                        <div class="transaction-title">Recent Transactions</div>
+
+                                        <div class="transaction-item">
+                                            <div class="transaction-info">
+                                                <div class="transaction-icon"><i class="fas fa-shopping-cart"></i></div>
+                                                <div>
+                                                    <div class="transaction-name">Amazon</div>
+                                                    <div class="transaction-date">Today</div>
+                                                </div>
+                                            </div>
+                                            <div class="transaction-amount negative">-$42.99</div>
+                                        </div>
+
+                                        <div class="transaction-item">
+                                            <div class="transaction-info">
+                                                <div class="transaction-icon"><i class="fas fa-money-bill-wave"></i></div>
+                                                <div>
+                                                    <div class="transaction-name">Salary Deposit</div>
+                                                    <div class="transaction-date">Yesterday</div>
+                                                </div>
+                                            </div>
+                                            <div class="transaction-amount positive">+$3,200.00</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Savings Account -->
+                            <div class="col-md-6">
+                                <div class="account-card">
+                                    <div class="account-header">
+                                        <div class="account-type">
+                                            <div class="account-icon savings"><i class="fas fa-piggy-bank"></i></div>
+                                            <div>
+                                                <div class="account-name">Savings Account</div>
+                                                <div class="account-number">****7892</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="balance-amount">$18,945.00</div>
+                                    <div class="balance-label savings">Total Savings</div>
+
+                                    <div class="interest-info">
+                                        <div class="interest-item">
+                                            <span class="interest-label">Interest Rate</span>
+                                            <span class="interest-value">2.5% APY</span>
+                                        </div>
+                                        <div class="interest-item text-end">
+                                            <span class="interest-label">Interest Earned (This Month)</span>
+                                            <span class="interest-value">+$39.47</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="growth-badge"><i class="fas fa-chart-line"></i> Growing steadily</div>
+                                </div>
+                            </div>
+
+                            <!-- Credit Card -->
+                            <div class="col-md-6">
+                                <div class="account-card">
+                                    <div class="account-header">
+                                        <div class="account-type">
+                                            <div class="account-icon credit"><i class="fas fa-credit-card"></i></div>
+                                            <div>
+                                                <div class="account-name">Credit Card</div>
+                                                <div class="account-number">****5634</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="balance-amount">$1,247.83</div>
+                                    <div class="balance-label credit">Current Balance</div>
+
+                                    <div class="credit-info">
+                                        <div class="credit-row">
+                                            <span class="credit-label">Credit Limit</span>
+                                            <span class="credit-value">$5,000.00</span>
+                                        </div>
+
+                                        <div class="credit-available">
+                                            <div class="credit-row">
+                                                <span class="credit-label">Available Credit</span>
+                                                <span class="credit-value">$3,752.17</span>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 75%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Crypto Account -->
+                            <div class="col-md-6">
+                                <div class="account-card">
+                                    <div class="account-header">
+                                        <div class="account-type">
+                                            <div class="account-icon crypto"><i class="fab fa-bitcoin"></i></div>
+                                            <div>
+                                                <div class="account-name">Crypto Account</div>
+                                                <div class="account-number">Digital Assets</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="balance-amount">$8,542.19</div>
+                                    <div class="growth-badge"><i class="fas fa-arrow-up"></i> +12.4%</div>
+
+                                    <div class="chart-placeholder crypto-chart-container">
+                                        <canvas id="cryptoChart"></canvas>
+                                    </div>
+
+                                    <div class="chart-days">
+                                        <span>Sun</span>
+                                        <span>Tue</span>
+                                        <span>Wed</span>
+                                        <span>Thu</span>
+                                        <span>Fri</span>
+                                        <span>Sat</span>
+                                        <span>Sun</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="quick-actions mt-4">
+                            <div class="quick-actions-title">Quick Actions</div>
+
+                            <div class="action-grid">
+                                <div class="action-card">
+                                    <div class="action-icon send"><i class="fas fa-paper-plane"></i></div>
+                                    <div class="action-title">Send Money</div>
+                                    <div class="action-subtitle">Transfer to anyone</div>
+                                </div>
+
+                                <div class="action-card">
+                                    <div class="action-icon pay"><i class="fas fa-file-invoice-dollar"></i></div>
+                                    <div class="action-title">Pay a Bill</div>
+                                    <div class="action-subtitle">Quick bill payment</div>
+                                </div>
+
+                                <div class="action-card">
+                                    <div class="action-icon view"><i class="fas fa-file-alt"></i></div>
+                                    <div class="action-title">View Statements</div>
+                                    <div class="action-subtitle">Download statements</div>
+                                </div>
+
+                                <div class="action-card">
+                                    <div class="action-icon support"><i class="fas fa-headset"></i></div>
+                                    <div class="action-title">Contact Support</div>
+                                    <div class="action-subtitle">We're here to help</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar -->
+                    <div class="col-lg-4">
+
+                        <!-- Snapshot Panel -->
+                        <div class="sidebar-panel">
+                            <div class="sidebar-title">My Snapshot</div>
+
+                            <div class="section-title">Upcoming Payments <i class="fas fa-gift" style="color:#b91c7f;"></i></div>
+
+                            <div class="payment-item">
+                                <div class="payment-info">
+                                    <div class="payment-icon"><i class="fas fa-tint" style="color:#e74c3c;"></i></div>
+                                    <div>
+                                        <div class="payment-name">Hydro Bill</div>
+                                        <div class="payment-due-in">Due in 3 days</div>
+                                    </div>
+                                </div>
+                                <div class="payment-amount">$85.20</div>
+                            </div>
+
+                            <div class="payment-item">
+                                <div class="payment-info">
+                                    <div class="payment-icon"><i class="fas fa-credit-card" style="color:#f39c12;"></i></div>
+                                    <div>
+                                        <div class="payment-name">Credit Card Payment</div>
+                                        <div class="payment-due-in">Due tomorrow</div>
+                                    </div>
+                                </div>
+                                <div class="payment-amount">$120.00</div>
+                            </div>
+
+                            <div class="payment-item">
+                                <div class="payment-info">
+                                    <div class="payment-icon"><i class="fas fa-wifi" style="color:#3498db;"></i></div>
+                                    <div>
+                                        <div class="payment-name">Internet Bill</div>
+                                        <div class="payment-due-in">Due in 8 days</div>
+                                    </div>
+                                </div>
+                                <div class="payment-amount">$65.00</div>
+                            </div>
+                        </div>
+
+                        <!-- Notifications -->
+                        <div class="sidebar-panel">
+                            <div class="section-title">Notifications & Alerts <i class="fas fa-bell" style="color:#b91c7f;"></i></div>
+
+                            <div class="notification-item warning">
+                                <div class="notification-header">
+                                    <div class="notification-icon warning"><i class="fas fa-info-circle"></i></div>
+                                    <div class="notification-title">Service Notice</div>
+                                </div>
+                                <div class="notification-text">We'll be doing some maintenance tonight.</div>
+                                <div class="notification-time">1 hour ago</div>
+                            </div>
+
+                            <div class="notification-item success">
+                                <div class="notification-header">
+                                    <div class="notification-icon success"><i class="fas fa-check"></i></div>
+                                    <div class="notification-title">Paycheque Deposited</div>
+                                </div>
+                                <div class="notification-text">Your salary of $3,200.00 has been deposited.</div>
+                                <div class="notification-time">2 hours ago</div>
+                            </div>
+
+                            <div class="notification-item warning">
+                                <div class="notification-header">
+                                    <div class="notification-icon warning"><i class="fas fa-exclamation-triangle"></i></div>
+                                    <div class="notification-title">Unusual Transaction</div>
+                                </div>
+                                <div class="notification-text">A transaction of $42.99 at Amazon was flagged.</div>
+                                <div class="notification-time">5 hours ago</div>
+                            </div>
+
+                            <div class="notification-item info">
+                                <div class="notification-header">
+                                    <div class="notification-icon info"><i class="fas fa-info-circle"></i></div>
+                                    <div class="notification-title">New Feature Available</div>
+                                </div>
+                                <div class="notification-text">Try our new budget planner tool.</div>
+                                <div class="notification-time">1 day ago</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<!-- Crypto Chart JS -->
+<script>
+const ctx = document.getElementById('cryptoChart');
+
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["Sun", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        datasets: [{
+            data: [90, 85, 80, 75, 70, 60, 50],
+            borderColor: "#00b8a9",
+            borderWidth: 2,
+            tension: 0.4,
+            fill: true,
+            backgroundColor: "rgba(0, 184, 169, 0.20)"
+        }]
+    },
+    options: {
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { display: false },
+            y: { display: false }
+        },
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
+</script>
+
+</body>
+</html>

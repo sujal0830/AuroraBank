@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuroraBank – Sign In</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="container-fluid min-vh-100">
+        <div class="row min-vh-100">
+
+            <!-- LEFT SECTION -->
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center p-4">
+
+                <div class="signin-card p-5 rounded-4 shadow-card">
+
+                    <!-- Logo -->
+                    <div class="d-flex align-items-center gap-2 mb-4">
+                        <div class="logo-icon-wrapper">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h2 class="fw-bold m-0 brand-title">AuroraBank</h2>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="fw-bold mb-1">Welcome Back</h3>
+                    <p class="text-muted small mb-4">Access your banking dashboard securely</p>
+
+                    <!-- Email -->
+                    <label class="form-label fw-semibold">Email / Client ID</label>
+                    <input type="text" class="form-control form-control-lg mb-3" placeholder="Enter your email or client ID">
+
+                    <!-- Password -->
+                    <label class="form-label fw-semibold">Password</label>
+                    <div class="input-group mb-3 password-wrapper">
+                        <input type="password" class="form-control form-control-lg" placeholder="Enter your password">
+                        <span class="input-group-text eye-addon"><i class="far fa-eye"></i></span>
+                    </div>
+
+                    <!-- Remember + Forgot -->
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rememberCheck">
+                            <label class="form-check-label small" for="rememberCheck">Remember me</label>
+                        </div>
+
+                        <a href="#" class="text-danger small fw-semibold">Forgot password?</a>
+                    </div>
+
+                    <!-- Sign In -->
+                    <button onclick="window.location.href='dashboard.html'" class="btn btn-aurora w-100 py-2 fs-6 fw-semibold">
+                        Sign In
+                    </button>
+
+                    <p class="text-center small text-muted mt-3">
+                        Don't have an account?
+                        <a href="#" class="text-danger fw-semibold">Open an account</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- RIGHT SECTION -->
+            <div class="col-lg-6 d-none d-lg-flex align-items-center gradient-panel text-white p-5">
+                <div class="mx-auto panel-content">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/11687/11687578.png"
+                        class="illustration-img d-block mx-auto mb-4" alt="Online Banking Illustration">
+
+                    <h2 class="fw-bold mb-3">Fast. Secure. Modern Banking.</h2>
+                    <p class="mb-4">Experience seamless banking with beautiful design & real-time updates.</p>
+
+                    <div class="features-list">
+                        <p><i class="fas fa-bolt me-2"></i><strong>Fast</strong> — Instant transactions</p>
+                        <p><i class="fas fa-lock me-2"></i><strong>Secure</strong> — Bank-grade encryption</p>
+                        <p><i class="fas fa-magic me-2"></i><strong>Modern</strong> — AI-powered insights</p>
+                    </div>
+
+                    <div class="d-flex gap-4 opacity-75 small">
+                        <span>🔐 256-bit SSL</span>
+                        <span>🛡️ FDIC Insured</span>
+                        <span>⚙️ PCI Compliant</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

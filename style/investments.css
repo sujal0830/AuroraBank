@@ -1,0 +1,413 @@
+/* ================================
+   GLOBAL
+================================ */
+
+:root {
+  --brand: #d81b60;
+  --brand-dark: #b01650;
+  --bg-page: #f5f7fa;
+  --border-soft: #e0e0e0;
+  --text-muted: #6b7280;
+  --text-dark: #111827;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-page);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.app-layout {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.main {
+  background-color: var(--bg-page);
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 20px 18px;
+}
+
+.sidebar-logo .logo-icon {
+  background: linear-gradient(135deg, #b91c7f 0%, #8b1760 100%);
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  font-size: 1.5rem;
+}
+
+.sidebar-nav {
+  margin-top: 8px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #374151;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #fef5fb;
+  color: #b91c7f;
+}
+
+.sidebar-link.active {
+  background-color: #fde7f1;
+  color: #b91c7f;
+  font-weight: 600;
+}
+
+.sidebar-footer {
+  margin-top: 16px;
+  padding-top: 8px;
+  border-top: 1px solid #edf2f7;
+}
+
+.signout-link {
+  color: #e11d48;
+  font-weight: 500;
+}
+
+/* Topbar */
+
+.topbar {
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #ffffff;
+}
+
+.icon-btn {
+  border: none;
+  background: #f3f4f6;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #4b5563;
+}
+
+.icon-btn:hover {
+  background: #e5e7eb;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.profile {
+  cursor: pointer;
+}
+
+/* Content */
+
+.content {
+  padding: 24px 28px 32px;
+}
+
+/* header row with Export / New Investment */
+.content-header {
+  margin-top: 4px;
+}
+
+
+.btn-export {
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  color: #111827;
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.btn-export:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+.btn-new-investment {
+  background: var(--brand);
+  border: none;
+  color: #ffffff;
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 8px 16px rgba(216, 27, 96, 0.25);
+}
+
+.btn-new-investment:hover {
+  background: var(--brand-dark);
+  color: #ffffff;
+}
+
+/* Stats grid */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem 1.7rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.stat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.stat-icon.wallet {
+  background: #fce7f3;
+  color: #d81b60;
+}
+
+.stat-icon.chart {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.stat-icon.trend {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.stat-amount {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.25rem;
+}
+
+.stat-description {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.stat-change {
+  font-size: 0.85rem;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.1rem;
+}
+
+/* Investment accounts */
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.accounts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.account-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem 1.7rem;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.9rem;
+}
+
+.account-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.account-icon.mutual-funds {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.account-icon.etfs {
+  background: #f3e8ff;
+  color: #9333ea;
+}
+
+.account-icon.crypto {
+  background: #fed7aa;
+  color: #ea580c;
+}
+
+.risk-badge {
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.risk-badge.low {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.risk-badge.medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.risk-badge.high {
+  background: #fee2e2;
+  color: #b91c1c;
+  display: inline-flex;
+  align-items: center;
+}
+
+.account-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.25rem;
+}
+
+.account-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+.account-chart {
+  height: 70px;
+  margin-bottom: 0.75rem;
+}
+
+.account-chart canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.account-change {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.change-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.change-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.change-value.positive {
+  color: #16a34a;
+}
+
+.change-value.negative {
+  color: #ef4444;
+}
+
+.warning-box {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 0.75rem 0.8rem;
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+}
+
+.warning-icon {
+  color: #dc2626;
+  margin-top: 0.1rem;
+}
+
+.warning-text {
+  color: #991b1b;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+  .accounts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    display: none;
+  }
+  .content {
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid,
+  .accounts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-header {
+    justify-content: flex-start;
+  }
+}

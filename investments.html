@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AuroraBank – Investments</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style/investments.css" />
+</head>
+
+<body>
+<div class="app-layout d-flex">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar d-flex flex-column">
+    <!-- Logo -->
+    <div class="sidebar-logo d-flex align-items-center gap-2 mb-4">
+      <div class="logo-icon d-flex align-items-center justify-content-center rounded-3">
+        <i class="fas fa-university"></i>
+      </div>
+      <span class="fw-bold fs-5">AuroraBank</span>
+    </div>
+
+    <!-- Navigation links -->
+    <nav class="sidebar-nav flex-grow-1">
+      <a href="dashboard.html" class="sidebar-link">
+        <span class="me-2"><i class="fas fa-house"></i></span> Dashboard
+      </a>
+      <a href="transfer.html" class="sidebar-link">
+        <span class="me-2"><i class="fas fa-arrow-right-arrow-left"></i></span> Transfer Funds
+      </a>
+      <a href="transactions.html" class="sidebar-link">
+        <span class="me-2"><i class="fas fa-file-invoice"></i></span> Transactions
+      </a>
+      <a href="investments.html" class="sidebar-link active">
+        <span class="me-2"><i class="fas fa-chart-line"></i></span> Investments
+      </a>
+      <a href="chat.html" class="sidebar-link">
+        <span class="me-2"><i class="fas fa-comments"></i></span> AI Chat
+      </a>
+    </nav>
+
+    <!-- Sign Out at bottom -->
+    <div class="sidebar-footer mt-auto">
+      <a href="index.html" class="sidebar-link signout-link">
+        <span class="me-2"><i class="fas fa-arrow-right-from-bracket"></i></span> Sign Out
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN AREA -->
+  <div class="main flex-grow-1 d-flex flex-column">
+
+    <!-- TOP NAVBAR -->
+    <header class="topbar d-flex align-items-center justify-content-between">
+      <div>
+        <h4 class="mb-1 fw-semibold">Investments</h4>
+        <p class="mb-0 text-muted small">Manage your investment portfolio</p>
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+
+        <!-- Notification -->
+        <button class="icon-btn" aria-label="Notifications">
+          <i class="fas fa-bell"></i>
+        </button>
+
+        <!-- Settings -->
+        <button class="icon-btn" aria-label="Settings">
+          <i class="fas fa-gear"></i>
+        </button>
+
+        <!-- Profile -->
+        <div class="d-flex align-items-center gap-2 profile">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="profile-avatar" alt="Profile">
+          <div class="d-none d-sm-block small">
+            <div class="fw-semibold">Michael Chen</div>
+            <div class="text-muted">michael.chen@email.com</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="content flex-grow-1">
+
+      <!-- Export / New Investment buttons -->
+      <div class="content-header d-flex justify-content-end align-items-center mb-4">
+        <div class="d-flex gap-2">
+          <button class="btn btn-export">
+            <i class="fas fa-download me-1"></i> Export
+          </button>
+          <button class="btn btn-new-investment">
+            <i class="fas fa-plus me-1"></i> New Investment
+          </button>
+        </div>
+      </div>
+
+      <!-- TOP STATS -->
+      <section class="stats-grid mb-4">
+        <!-- Total Invested -->
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Total Invested</span>
+            <div class="stat-icon wallet">
+              <i class="fas fa-wallet"></i>
+            </div>
+          </div>
+          <div class="stat-amount">$245,000</div>
+          <div class="stat-description">Across all accounts</div>
+        </div>
+
+        <!-- Total Return -->
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Total Return</span>
+            <div class="stat-icon chart">
+              <i class="fas fa-chart-line"></i>
+            </div>
+          </div>
+          <div class="stat-amount">$35,450</div>
+          <div class="stat-description">Current gains</div>
+        </div>
+
+        <!-- Gain / Loss -->
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-label">Gain / Loss</span>
+            <div class="stat-icon trend">
+              <i class="fas fa-arrow-trend-up"></i>
+            </div>
+          </div>
+          <div class="stat-amount text-success">+14.61%</div>
+          <div class="stat-change">
+            <i class="fas fa-arrow-up"></i>
+            +2.3% this month
+          </div>
+        </div>
+      </section>
+
+      <!-- Investment Accounts -->
+      <h5 class="section-title mb-3">Investment Accounts</h5>
+
+      <div class="accounts-grid">
+
+        <!-- Mutual Funds -->
+        <div class="account-card">
+          <div class="account-header">
+            <div class="account-icon mutual-funds">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <span class="risk-badge low">Low Risk</span>
+          </div>
+          <div class="account-name">Mutual Funds</div>
+          <div class="account-value">$125,000</div>
+
+          <div class="account-chart">
+            <canvas id="mutualChart"></canvas>
+          </div>
+
+          <div class="account-change">
+            <span class="change-label">Today's change</span>
+            <span class="change-value positive">+$2,340 (+0.55%)</span>
+          </div>
+        </div>
+
+        <!-- ETFs -->
+        <div class="account-card">
+          <div class="account-header">
+            <div class="account-icon etfs">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <span class="risk-badge medium">Medium Risk</span>
+          </div>
+          <div class="account-name">ETFs</div>
+          <div class="account-value">$85,000</div>
+
+          <div class="account-chart">
+            <canvas id="etfChart"></canvas>
+          </div>
+
+          <div class="account-change">
+            <span class="change-label">Today's change</span>
+            <span class="change-value positive">+$1,890 (+0.60%)</span>
+          </div>
+        </div>
+
+        <!-- Crypto -->
+        <div class="account-card">
+          <div class="account-header">
+            <div class="account-icon crypto">
+              <i class="fab fa-bitcoin"></i>
+            </div>
+            <span class="risk-badge high">
+              <i class="fas fa-triangle-exclamation me-1"></i>
+              High Risk – Crypto
+            </span>
+          </div>
+          <div class="account-name">Crypto Account</div>
+          <div class="account-value">$35,000</div>
+
+          <div class="account-chart">
+            <canvas id="cryptoChart"></canvas>
+          </div>
+
+          <div class="account-change">
+            <span class="change-label">Today's change</span>
+            <span class="change-value negative">-$3,220 (-2.97%)</span>
+          </div>
+
+          <div class="warning-box">
+            <i class="fas fa-triangle-exclamation warning-icon"></i>
+            <div class="warning-text">
+              Crypto assets are highly volatile and subject to significant price fluctuations.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<!-- Charts setup -->
+<script>
+  // Shared chart options
+  const miniChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { enabled: false }
+    },
+    scales: {
+      x: { display: false },
+      y: { display: false }
+    },
+    elements: {
+      point: { radius: 0 }
+    }
+  };
+
+  // Mutual Funds chart
+  const mutualCtx = document.getElementById('mutualChart').getContext('2d');
+  new Chart(mutualCtx, {
+    type: 'line',
+    data: {
+      labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+      datasets: [{
+        data: [120, 121, 122, 121.5, 123, 124, 125],
+        borderColor: '#2563eb',
+        backgroundColor: 'rgba(37, 99, 235, 0.08)',
+        fill: true,
+        tension: 0.4,
+        borderWidth: 2
+      }]
+    },
+    options: miniChartOptions
+  });
+
+  // ETFs chart
+  const etfCtx = document.getElementById('etfChart').getContext('2d');
+  new Chart(etfCtx, {
+    type: 'line',
+    data: {
+      labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+      datasets: [{
+        data: [100, 101, 102, 103, 104, 105, 106],
+        borderColor: '#9333ea',
+        backgroundColor: 'rgba(147, 51, 234, 0.08)',
+        fill: true,
+        tension: 0.4,
+        borderWidth: 2
+      }]
+    },
+    options: miniChartOptions
+  });
+
+  // Crypto chart
+  const cryptoCtx = document.getElementById('cryptoChart').getContext('2d');
+  new Chart(cryptoCtx, {
+    type: 'line',
+    data: {
+      labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+      datasets: [{
+        data: [140, 138, 142, 139, 136, 134, 132],
+        borderColor: '#ea580c',
+        backgroundColor: 'rgba(234, 88, 12, 0.08)',
+        fill: true,
+        tension: 0.4,
+        borderWidth: 2
+      }]
+    },
+    options: miniChartOptions
+  });
+</script>
+
+</body>
+</html>

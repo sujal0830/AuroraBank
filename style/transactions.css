@@ -1,0 +1,530 @@
+/* --- GLOBAL / LAYOUT --- */
+
+:root {
+  --brand: #d81b60;
+  --brand-dark: #b01650;
+  --bg-page: #f5f7fa;
+  --border-soft: #e0e0e0;
+  --text-muted: #7f8c8d;
+  --text-dark: #2c3e50;
+}
+
+body {
+  background-color: var(--bg-page);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.app-layout {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.main {
+  background-color: var(--bg-page);
+}
+
+/* --- SIDEBAR --- */
+
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 20px 18px;
+}
+
+.sidebar-logo .logo-icon {
+  background: linear-gradient(135deg, #b91c7f 0%, #8b1760 100%);
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  font-size: 1.5rem;
+}
+
+.sidebar-nav {
+  margin-top: 8px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #374151;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #fef5fb;
+  color: var(--brand);
+}
+
+.sidebar-link.active {
+  background-color: #fde7f1;
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.sidebar-footer {
+  margin-top: 16px;
+  padding-top: 8px;
+  border-top: 1px solid #edf2f7;
+}
+
+.signout-link {
+  color: #e11d48;
+  font-weight: 500;
+}
+
+/* --- TOPBAR --- */
+
+.topbar {
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #ffffff;
+}
+
+.icon-btn {
+  border: none;
+  background: #f3f4f6;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #4b5563;
+}
+
+.icon-btn:hover {
+  background: #e5e7eb;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+/* --- CONTENT WRAPPER --- */
+
+.content {
+  padding: 24px 28px 32px;
+}
+
+.transactions-main {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- BREADCRUMB --- */
+
+.breadcrumb {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+}
+
+.breadcrumb-item {
+  color: #6b7280;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "›";
+  color: #6b7280;
+}
+
+.breadcrumb-item.active {
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.breadcrumb a {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #1a1a1a;
+}
+
+/* --- ACCOUNT HEADER --- */
+
+.account-header {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account-info {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.account-icon-header {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #d62976 0%, #b91c7f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.account-details h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.3rem 0;
+}
+
+.account-updated {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.balance-section {
+  text-align: right;
+}
+
+.balance-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.3rem;
+}
+
+.balance-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* --- FILTERS --- */
+
+.filters-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+  gap: 1rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.filter-input {
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: #d62976;
+}
+
+.filter-select {
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  background: white;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #d62976;
+}
+
+/* Search */
+
+.search-wrapper {
+  position: relative;
+}
+
+.search-input {
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.7rem 1rem 0.7rem 2.5rem;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  width: 100%;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #d62976;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+/* --- TRANSACTIONS TABLE --- */
+
+.transactions-table {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f9fafb;
+}
+
+th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+td {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #fafbfc;
+}
+
+/* Cells */
+
+.date-cell {
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.description-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.2rem;
+}
+
+.transaction-method {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Categories */
+
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.category-badge.income {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.category-badge.shopping {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.category-badge.food {
+  background: #fed7aa;
+  color: #92400e;
+}
+
+.category-badge.transportation {
+  background: #e9d5ff;
+  color: #6b21a8;
+}
+
+.category-badge.entertainment {
+  background: #fce7f3;
+  color: #9f1239;
+}
+
+.category-badge.groceries {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.category-badge.interest {
+  background: #ccfbf1;
+  color: #134e4a;
+}
+
+.category-badge.utilities {
+  background: #fef3c7;
+  color: #78350f;
+}
+
+.category-badge.transfer {
+  background: #ddd6fe;
+  color: #5b21b6;
+}
+
+/* Amount / Balance */
+
+.amount-cell {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+.amount-positive {
+  color: #10b981;
+}
+
+.amount-negative {
+  color: #ef4444;
+}
+
+.balance-cell {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-align: right;
+}
+
+/* --- PAGINATION --- */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.pagination button {
+  border: 2px solid #e5e7eb;
+  background: white;
+  color: #6b7280;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+  border-color: #d62976;
+  color: #d62976;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination button.active {
+  background: linear-gradient(135deg, #d62976 0%, #b91c7f 100%);
+  color: white;
+  border-color: #d62976;
+}
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 1200px) {
+  .filters-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    display: none; 
+  }
+
+  .content {
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .account-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .balance-section {
+    text-align: left;
+    width: 100%;
+  }
+
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transactions-table {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 900px;
+  }
+}

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AuroraBank – Transactions</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style/transactions.css">
+</head>
+<body>
+
+<div class="app-layout d-flex">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar d-flex flex-column">
+    <!-- Logo -->
+    <div class="sidebar-logo d-flex align-items-center gap-2 mb-4">
+      <div class="logo-icon d-flex align-items-center justify-content-center rounded-3">
+        <i class="fas fa-university"></i>
+      </div>
+      <span class="fw-bold fs-5">AuroraBank</span>
+    </div>
+
+    <!-- Navigation links -->
+    <nav class="sidebar-nav flex-grow-1">
+      <a href="dashboard.html" class="sidebar-link">
+        <span class="me-2"><i class="fas fa-house"></i></span> Dashboard
+      </a>
+      <a href="transfer.html" class="sidebar-link">
+        <span class="me-2"><i class="fas fa-arrow-right-arrow-left"></i></span> Transfer Funds
+      </a>
+      <a href="transactions.html" class="sidebar-link active">
+        <span class="me-2"><i class="fas fa-file-invoice"></i></span> Transactions
+      </a>
+      <a href="investments.html" class="sidebar-link">
+        <span class="me-2"><i class="fas fa-chart-line"></i></span> Investments
+      </a>
+      <a href="chat.html" class="sidebar-link">
+        <span class="me-2"><i class="fas fa-comments"></i></span> AI Chat
+      </a>
+    </nav>
+
+    <!-- Sign Out at bottom -->
+    <div class="sidebar-footer mt-auto">
+      <a href="index.html" class="sidebar-link signout-link">
+        <span class="me-2"><i class="fas fa-arrow-right-from-bracket"></i></span> Sign Out
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN AREA -->
+  <div class="main flex-grow-1 d-flex flex-column">
+
+    <!-- TOP NAVBAR -->
+    <header class="topbar d-flex align-items-center justify-content-between">
+      <div>
+        <h4 class="mb-1 fw-semibold">Transactions</h4>
+        <p class="mb-0 text-muted small">View and filter your chequing account history</p>
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <!-- Notification -->
+        <button class="icon-btn" aria-label="Notifications">
+          <i class="fas fa-bell"></i>
+        </button>
+
+        <!-- Settings -->
+        <button class="icon-btn" aria-label="Settings">
+          <i class="fas fa-gear"></i>
+        </button>
+
+        <!-- Profile -->
+        <div class="d-flex align-items-center gap-2 profile">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg"
+               class="profile-avatar"
+               alt="Profile">
+
+          <div class="d-none d-sm-block small">
+            <div class="fw-semibold">Michael Chen</div>
+            <div class="text-muted">michael.chen@email.com</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <main class="content">
+      <div class="transactions-main">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="dashboard.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Chequing Account</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Transactions</li>
+          </ol>
+        </nav>
+
+        <!-- Account Header -->
+        <div class="account-header">
+          <div class="account-info">
+            <div class="account-icon-header">
+              <i class="fas fa-wallet"></i>
+            </div>
+            <div class="account-details">
+              <h1>Chequing Account ••••3421</h1>
+              <p class="account-updated">Updated just now</p>
+            </div>
+          </div>
+          <div class="balance-section">
+            <div class="balance-label">Current Balance</div>
+            <div class="balance-amount">$24,567.89</div>
+          </div>
+        </div>
+
+        <!-- Filters Section -->
+        <div class="filters-section">
+          <div class="filters-grid">
+            <div class="filter-group">
+              <label class="filter-label">From Date</label>
+              <input type="date" class="filter-input" value="2024-01-01">
+            </div>
+            <div class="filter-group">
+              <label class="filter-label">To Date</label>
+              <input type="date" class="filter-input" value="2024-11-30">
+            </div>
+            <div class="filter-group">
+              <label class="filter-label">Type</label>
+              <select class="filter-select">
+                <option selected>All</option>
+                <option>Income</option>
+                <option>Expenses</option>
+                <option>Transfers</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label class="filter-label">Search</label>
+              <div class="search-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search merchant or amount...">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transactions Table -->
+        <div class="transactions-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th style="text-align: right;">Amount</th>
+                <th style="text-align: right;">Balance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="date-cell">Nov 28, 2024</td>
+                <td>
+                  <div class="description-cell">
+                    <span class="transaction-name">Salary Deposit - Tech Corp Inc</span>
+                    <span class="transaction-method">Direct Deposit</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="category-badge income">
+                    <i class="fas fa-coins"></i> Income
+                  </span>
+                </td>
+                <td class="amount-cell amount-positive">+$4,500.00</td>
+                <td class="balance-cell">$24,567.89</td>
+              </tr>
+              <tr>
+                <td class="date-cell">Nov 27, 2024</td>
+                <td>
+                  <div class="description-cell">
+                    <span class="transaction-name">Amazon.com</span>
+                    <span class="transaction-method">Online Purchase</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="category-badge shopping">
+                    <i class="fas fa-shopping-cart"></i> Shopping
+                  </span>
+                </td>
+                <td class="amount-cell amount-negative">-$89.99</td>
+                <td class="balance-cell">$20,067.89</td>
+              </tr>
+              <tr>
+                <td class="date-cell">Nov 26, 2024</td>
+                <td>
+                  <div class="description-cell">
+                    <span class="transaction-name">Starbucks Coffee</span>
+                    <span class="transaction-method">Card Payment</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="category-badge food">
+                    <i class="fas fa-utensils"></i> Food &amp; Dining
+                  </span>
+                </td>
+                <td class="amount-cell amount-negative">-$6.75</td>
+                <td class="balance-cell">$20,157.88</td>
+              </tr>
+              <tr>
+                <td class="date-cell">Nov 25, 2024</td>
+                <td>
+                  <div class="description-cell">
+                    <span class="transaction-name">Shell Gas Station</span>
+                    <span class="transaction-method">Debit Card</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="category-badge transportation">
+                    <i class="fas fa-gas-pump"></i> Transportation
+                  </span>
+                </td>
+                <td class="amount-cell amount-negative">-$52.30</td>
+                <td class="balance-cell">$20,164.63</td>
+              </tr>
+              <tr>
+                <td class="date-cell">Nov 24, 2024</td>
+                <td>
+                  <div class="description-cell">
+                    <span class="transaction-name">Netflix Subscription</span>
+                    <span class="transaction-method">Recurring Payment</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="category-badge entertainment">
+                    <i class="fas fa-tv"></i> Entertainment
+                  </span>
+                </td>
+                <td class="amount-cell amount-negative">-$15.99</td>
+                <td class="balance-cell">$20,216.93</td>
+              </tr>
+              <tr>
+                <td class="date-cell">Nov 23, 2024</td>
+                <td>
+                  <div class="description-cell">
+                    <span class="transaction-name">Whole Foods Market</span>
+                    <span class="transaction-method">Debit Card</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="category-badge groceries">
+                    <i class="fas fa-shopping-basket"></i> Groceries
+                  </span>
+                </td>
+                <td class="amount-cell amount-negative">-$127.45</td>
+                <td class="balance-cell">$20,232.92</td>
+              </tr>
+              <tr>
+                <td class="date-cell">Nov 22, 2024</td>
+                <td>
+                  <div class="description-cell">
+                    <span class="transaction-name">Interest Payment</span>
+                    <span class="transaction-method">Monthly Interest</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="category-badge interest">
+                    <i class="fas fa-percentage"></i> Interest
+                  </span>
+                </td>
+                <td class="amount-cell amount-positive">+$12.37</td>
+                <td class="balance-cell">$20,360.37</td>
+              </tr>
+              <tr>
+                <td class="date-cell">Nov 21, 2024</td>
+                <td>
+                  <div class="description-cell">
+                    <span class="transaction-name">City Power &amp; Light</span>
+                    <span class="transaction-method">Bill Payment</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="category-badge utilities">
+                    <i class="fas fa-bolt"></i> Utilities
+                  </span>
+                </td>
+                <td class="amount-cell amount-negative">-$145.67</td>
+                <td class="balance-cell">$20,348.00</td>
+              </tr>
+              <tr>
+                <td class="date-cell">Nov 20, 2024</td>
+                <td>
+                  <div class="description-cell">
+                    <span class="transaction-name">Apple.com/bill</span>
+                    <span class="transaction-method">Online Purchase</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="category-badge shopping">
+                    <i class="fas fa-shopping-cart"></i> Shopping
+                  </span>
+                </td>
+                <td class="amount-cell amount-negative">-$299.00</td>
+                <td class="balance-cell">$20,493.67</td>
+              </tr>
+              <tr>
+                <td class="date-cell">Nov 19, 2024</td>
+                <td>
+                  <div class="description-cell">
+                    <span class="transaction-name">Target Store #2341</span>
+                    <span class="transaction-method">Card Payment</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="category-badge shopping">
+                    <i class="fas fa-shopping-cart"></i> Shopping
+                  </span>
+                </td>
+                <td class="amount-cell amount-negative">-$78.23</td>
+                <td class="balance-cell">$20,792.67</td>
+              </tr>
+              <tr>
+                <td class="date-cell">Nov 18, 2024</td>
+                <td>
+                  <div class="description-cell">
+                    <span class="transaction-name">Transfer to Savings</span>
+                    <span class="transaction-method">Internal Transfer</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="category-badge transfer">
+                    <i class="fas fa-exchange-alt"></i> Transfer
+                  </span>
+                </td>
+                <td class="amount-cell amount-negative">-$500.00</td>
+                <td class="balance-cell">$20,870.90</td>
+              </tr>
+              <tr>
+                <td class="date-cell">Nov 17, 2024</td>
+                <td>
+                  <div class="description-cell">
+                    <span class="transaction-name">Freelance Payment - Design Work</span>
+                    <span class="transaction-method">Wire Transfer</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="category-badge income">
+                    <i class="fas fa-coins"></i> Income
+                  </span>
+                </td>
+                <td class="amount-cell amount-positive">+$850.00</td>
+                <td class="balance-cell">$21,370.90</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button disabled>
+            <i class="fas fa-chevron-left"></i> Previous
+          </button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>
+            Next <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat - AuroraBank</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style/chat.css">
+</head>
+
+<body>
+<div class="app-layout d-flex">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar d-flex flex-column">
+
+        <!-- Logo -->
+        <div class="sidebar-logo d-flex align-items-center gap-2 mb-4">
+            <div class="logo-icon d-flex align-items-center justify-content-center rounded-3">
+                <i class="fas fa-university"></i>
+            </div>
+            <span class="fw-bold fs-5">AuroraBank</span>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav flex-grow-1">
+            <a href="dashboard.html" class="sidebar-link">
+                <i class="fas fa-house me-2"></i> Dashboard
+            </a>
+
+            <a href="transfer.html" class="sidebar-link">
+                <i class="fas fa-arrow-right-arrow-left me-2"></i> Transfer Funds
+            </a>
+
+            <a href="transactions.html" class="sidebar-link">
+                <i class="fas fa-file-invoice me-2"></i> Transactions
+            </a>
+
+            <a href="investments.html" class="sidebar-link">
+                <i class="fas fa-chart-line me-2"></i> Investments
+            </a>
+
+            <a href="chat.html" class="sidebar-link active">
+                <i class="fas fa-robot me-2"></i> AI Chat
+            </a>
+        </nav>
+
+        <!-- Sidebar -->
+        <div class="sidebar-footer mt-auto">
+            <a href="index.html" class="sidebar-link signout-link">
+                <i class="fas fa-arrow-right-from-bracket me-2"></i> Sign Out
+            </a>
+        </div>
+
+    </aside>
+
+    <!-- MAIN AREA -->
+    <div class="main flex-grow-1 d-flex flex-column">
+
+        <!-- TOP NAVBAR -->
+        <header class="topbar d-flex align-items-center justify-content-between">
+            <div>
+                <h4 class="mb-1 fw-semibold">AI Chat</h4>
+                <p class="mb-0 text-muted small">Ask questions or get financial assistance</p>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+
+                <!-- Notification -->
+                <button class="icon-btn">
+                    <i class="fas fa-bell"></i>
+                </button>
+
+                <!-- Settings -->
+                <button class="icon-btn">
+                    <i class="fas fa-gear"></i>
+                </button>
+
+                <!-- Profile -->
+                <div class="d-flex align-items-center gap-2 profile">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="profile-avatar" alt="">
+                    <div class="d-none d-sm-block small">
+                        <div class="fw-semibold">Michael Chen</div>
+                        <div class="text-muted">michael.chen@email.com</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- CHAT AREA -->
+        <main class="chat-container d-flex">
+
+            <!-- Chat Window -->
+            <div class="chat-window">
+
+                <div class="chat-messages">
+
+                    <!-- AI Welcome -->
+                    <div class="message ai">
+                        <div class="message-avatar ai"><i class="fas fa-robot"></i></div>
+                        <div>
+                            <div class="welcome-badge">AI Assistant</div>
+                            <div class="message-bubble">
+                                Hello! How can I assist you with your finances today?
+                            </div>
+                            <div class="message-time">Just now</div>
+                        </div>
+                    </div>
+
+                    <!-- Example User Message -->
+                    <div class="message user">
+                        <div class="message-avatar user"><i class="fas fa-user"></i></div>
+                        <div>
+                            <div class="message-bubble">
+                                Can you show me my account balance?
+                            </div>
+                            <div class="message-time">2 minutes ago</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Chat Input -->
+                <div class="chat-input-container">
+                    <div class="chat-input-wrapper">
+                        <input type="text" class="chat-input" placeholder="Type your message…">
+                        <button class="btn-send"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="quick-actions-panel">
+                <h3 class="panel-title">Quick Actions</h3>
+
+                <div class="action-card" id="action-Dashboard">
+                    <div class="action-icon balance">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="action-content">
+                        <div class="action-title">Check Balance</div>
+                        <div class="action-description">View balances across all your accounts</div>
+                    </div>
+                    <i class="fas fa-chevron-right action-arrow"></i>
+                </div>
+
+                <div class="action-card" id="action-transactions">
+                    <div class="action-icon transactions">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <div class="action-content">
+                        <div class="action-title">Recent Transactions</div>
+                        <div class="action-description">See your latest spending activity</div>
+                    </div>
+                    <i class="fas fa-chevron-right action-arrow"></i>
+                </div>
+
+                <div class="action-card" id="action-transfer">
+                    <div class="action-icon transfer">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="action-content">
+                        <div class="action-title">Transfer Money</div>
+                        <div class="action-description">Send funds to saved recipients</div>
+                    </div>
+                    <i class="fas fa-chevron-right action-arrow"></i>
+                </div>
+
+                <div class="action-card" id="action-investments">
+                    <div class="action-icon insights">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="action-content">
+                        <div class="action-title">Investment Insights</div>
+                        <div class="action-description">Get AI-powered portfolio analysis</div>
+                    </div>
+                    <i class="fas fa-chevron-right action-arrow"></i>
+                </div>
+            </div>
+
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Quick Actions → Redirects
+
+        document.getElementById("action-Dashboard").addEventListener("click", function () {
+            window.location.href = "Dashboard.html";
+        });
+        document.getElementById("action-transactions").addEventListener("click", function () {
+            window.location.href = "transactions.html";
+        });
+
+        document.getElementById("action-transfer").addEventListener("click", function () {
+            window.location.href = "transfer.html";
+        });
+
+        document.getElementById("action-investments").addEventListener("click", function () {
+            window.location.href = "investments.html";
+        });
+    </script>
+</body>
+</html>
